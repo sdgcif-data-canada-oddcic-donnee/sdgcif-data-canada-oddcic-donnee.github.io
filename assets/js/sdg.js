@@ -4484,7 +4484,7 @@ function initialiseGoogleAnalytics(){
 }
 
 function sendPageviewToGoogleAnalytics(){
-    ga('create', 'G-MKK1T51LBE', 'auto');
+    ga('create', 'G-CX45HHXL38', 'auto');
     ga('require', 'eventTracker', {
         attributePrefix: 'data-'
     });
