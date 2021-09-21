@@ -112,37 +112,40 @@ var translations = {
         
         <link rel="canonical" href="/">
 
-        
-
         <!--[if IE 9]>
         <script src="/assets/js/lib/classList.js"></script>
         <![endif]-->
 
-        <!-- Favicons ================================================== -->
-        <!-- 128x128 -->
-        <link rel="shortcut icon" type="image/ico" href="/assets/img/favicons/favicon.ico">
-        <link rel="icon" type="image/png" href="/assets/img/favicons/favicon.png"><!-- 192x192, as recommended for Android
-        http://updates.html5rocks.com/2014/11/Support-for-theme-color-in-Chrome-39-for-Android
-        -->
-
         
+
+
+
+
+<link rel="shortcut icon" type="image/ico" href="/assets/img/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="/assets/img/favicons/favicon.png">
+
 
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20210908150827">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20210921192003">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/>
+        
+
+        
 
     </head>
-<body class="language-fr layout-goal-by-target">
+<body class="language-fr
+layout-goal-by-target
+">
 <!-- <div class="container"> -->
 
 
@@ -168,14 +171,43 @@ var translations = {
     <img src="/assets/img/SDG_logo.png" alt="Objectifs de développement durable - 17 objectifs pour transformer notre monde" />
 </a>
       <div class="mobile-widgets">
-    <ul id='accessibility-nav' class='contrast-switcher'></ul><div class="language-toggle-mobile">
+    <ul id='accessibility-nav' class='contrast-switcher'>
+        
+
+    <li class="nav-link contrast contrast-default contrast-type-default">
+        <a title="Désactiver le contraste élevé"
+           aria-label="Désactiver le contraste élevé"
+           data-contrast-switch-to="default"
+           href="javascript:void(0)"
+           data-on="click"
+data-event-category="Accessibility"
+data-event-action="Change contrast setting"
+data-event-label="default"
+
+        >A</a>
+    </li>
+    <li class="nav-link contrast contrast-high contrast-type-default">
+        <a title="Activer le contraste élevé"
+           aria-label="Activer le contraste élevé"
+           data-contrast-switch-to="high"
+           href="javascript:void(0)"
+           data-on="click"
+data-event-category="Accessibility"
+data-event-action="Change contrast setting"
+data-event-label="high"
+
+        >A</a>
+    </li>
+
+
+    </ul><div class="language-toggle-mobile">
         <div class="language-toggle-container">
   
   <div class="btn-group language-toggle-dropdown ">
     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <span class="language-globe-in-dropdown"><i class="fa fa-globe language-toggle-globe-dropdown"></i></span><span class="language-name">Français</span>
       <span class="language-abbreviation">fr</span><i class="language-toggle-caret fa fa-chevron-down"></i></button>
-    <ul class="dropdown-menu"><li>
+    <ul class="dropdown-menu"><li class="language-option-en">
             <a href="/3/">
               English
             </a>
@@ -213,7 +245,7 @@ var translations = {
     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <span class="language-globe-in-dropdown"><i class="fa fa-globe language-toggle-globe-dropdown"></i></span><span class="language-name">Français</span>
       <span class="language-abbreviation">fr</span><i class="language-toggle-caret fa fa-chevron-down"></i></button>
-    <ul class="dropdown-menu"><li>
+    <ul class="dropdown-menu"><li class="language-option-en">
             <a href="/3/">
               English
             </a>
@@ -224,6 +256,36 @@ var translations = {
 
 
 </li>
+
+
+
+    <li class="nav-link contrast contrast-default contrast-type-default">
+        <a title="Désactiver le contraste élevé"
+           aria-label="Désactiver le contraste élevé"
+           data-contrast-switch-to="default"
+           href="javascript:void(0)"
+           data-on="click"
+data-event-category="Accessibility"
+data-event-action="Change contrast setting"
+data-event-label="default"
+
+        >A</a>
+    </li>
+    <li class="nav-link contrast contrast-high contrast-type-default">
+        <a title="Activer le contraste élevé"
+           aria-label="Activer le contraste élevé"
+           data-contrast-switch-to="high"
+           href="javascript:void(0)"
+           data-on="click"
+data-event-category="Accessibility"
+data-event-action="Change contrast setting"
+data-event-label="high"
+
+        >A</a>
+    </li>
+
+
+
 </ul>
 
     </li>
@@ -232,7 +294,7 @@ var translations = {
         aria-haspopup="true">
         <button data-target="search-mobile" aria-expanded="false">Chercher</button>
         <div id="search-mobile" class="menu-target">
-  <form action="/fr/search">
+  <form action="/fr/search/">
     <label class="sr-only" for="indicator_search-mobile">Chercher</label>
     <input type="text" name="q" id="indicator_search-mobile" title="Chercher" /><!--
     --><button aria-label="Chercher" id="search-mobile-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
@@ -242,7 +304,7 @@ var translations = {
     </li>
 </ul>
       <div id="search" class="menu-target">
-  <form action="/fr/search">
+  <form action="/fr/search/">
     <label class="sr-only" for="indicator_search">Chercher</label>
     <input type="text" name="q" id="indicator_search" title="Chercher" /><!--
     --><button aria-label="Chercher" id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
@@ -270,7 +332,7 @@ var translations = {
     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <span class="language-globe-in-dropdown"><i class="fa fa-globe language-toggle-globe-dropdown"></i></span><span class="language-name">Français</span>
       <span class="language-abbreviation">fr</span><i class="language-toggle-caret fa fa-chevron-down"></i></button>
-    <ul class="dropdown-menu"><li>
+    <ul class="dropdown-menu"><li class="language-option-en">
             <a href="/3/">
               English
             </a>
@@ -281,6 +343,36 @@ var translations = {
 
 
 </li>
+
+
+
+    <li class="nav-link contrast contrast-default contrast-type-default">
+        <a title="Désactiver le contraste élevé"
+           aria-label="Désactiver le contraste élevé"
+           data-contrast-switch-to="default"
+           href="javascript:void(0)"
+           data-on="click"
+data-event-category="Accessibility"
+data-event-action="Change contrast setting"
+data-event-label="default"
+
+        >A</a>
+    </li>
+    <li class="nav-link contrast contrast-high contrast-type-default">
+        <a title="Activer le contraste élevé"
+           aria-label="Activer le contraste élevé"
+           data-contrast-switch-to="high"
+           href="javascript:void(0)"
+           data-on="click"
+data-event-category="Accessibility"
+data-event-action="Change contrast setting"
+data-event-label="high"
+
+        >A</a>
+    </li>
+
+
+
 </ul>
 
     </nav>
@@ -337,6 +429,7 @@ var translations = {
   </div>
 </div>
 
+
 <div id="main-content" class="container goal-indicators goal-3 goal-by-target" role="main">
 
   
@@ -368,24 +461,25 @@ var translations = {
       
       
       
-      
-      
-      
-      
-      
 
       <div class="col-md-12  goal-indicator">
+        
         <span class="indicator-card-number">
           3.1.1
-          <span class="status complete">
-            Diffusé en ligne
-          </span>
+          
+
+
+<span class="status complete">
+    <span class="status-inner">Déclaré</span>
+</span>
+
         </span>
         <a href="/fr/3-1-1">
           Pourcentage des Canadiens déclarant consommer des fruits et des légumes au moins 5 fois par jour
         </a>
         
 
+        
       </div>
     
     </div>
@@ -404,24 +498,25 @@ var translations = {
       
       
       
-      
-      
-      
-      
-      
 
       <div class="col-md-12  goal-indicator">
+        
         <span class="indicator-card-number">
           3.2.1
-          <span class="status complete">
-            Diffusé en ligne
-          </span>
+          
+
+
+<span class="status complete">
+    <span class="status-inner">Déclaré</span>
+</span>
+
         </span>
         <a href="/fr/3-2-1">
           Prévalence du vapotage chez les jeunes
         </a>
         
 
+        
       </div>
     
     </div>
@@ -440,24 +535,25 @@ var translations = {
       
       
       
-      
-      
-      
-      
-      
 
       <div class="col-md-12  goal-indicator">
+        
         <span class="indicator-card-number">
           3.3.1
-          <span class="status complete">
-            Diffusé en ligne
-          </span>
+          
+
+
+<span class="status complete">
+    <span class="status-inner">Déclaré</span>
+</span>
+
         </span>
         <a href="/fr/3-3-1">
           Pourcentage de la population vivant avec de l’embonpoint ou de l’obésité
         </a>
         
 
+        
       </div>
     
     </div>
@@ -476,24 +572,25 @@ var translations = {
       
       
       
-      
-      
-      
-      
-      
 
       <div class="col-md-12  goal-indicator">
+        
         <span class="indicator-card-number">
           3.4.1
-          <span class="status complete">
-            Diffusé en ligne
-          </span>
+          
+
+
+<span class="status complete">
+    <span class="status-inner">Déclaré</span>
+</span>
+
         </span>
         <a href="/fr/3-4-1">
           Prévalence de la consommation abusive d’alcool
         </a>
         
 
+        
       </div>
     
     </div>
@@ -512,24 +609,25 @@ var translations = {
       
       
       
-      
-      
-      
-      
-      
 
       <div class="col-md-12  goal-indicator">
+        
         <span class="indicator-card-number">
           3.5.1
-          <span class="status complete">
-            Diffusé en ligne
-          </span>
+          
+
+
+<span class="status complete">
+    <span class="status-inner">Déclaré</span>
+</span>
+
         </span>
         <a href="/fr/3-5-1">
           Pourcentage des Canadiens qui sont satisfait ou très satisfait à l’égard de la vie
         </a>
         
 
+        
       </div>
     
     </div>
@@ -548,24 +646,25 @@ var translations = {
       
       
       
-      
-      
-      
-      
-      
 
       <div class="col-md-12  goal-indicator">
+        
         <span class="indicator-card-number">
           3.6.1
-          <span class="status complete">
-            Diffusé en ligne
-          </span>
+          
+
+
+<span class="status complete">
+    <span class="status-inner">Déclaré</span>
+</span>
+
         </span>
         <a href="/fr/3-6-1">
           Pourcentage des Canadiens qui perçoivent leur santé et bien-être général comme très bons ou excellents
         </a>
         
 
+        
       </div>
     
     </div>
@@ -584,24 +683,25 @@ var translations = {
       
       
       
-      
-      
-      
-      
-      
 
       <div class="col-md-12  goal-indicator">
+        
         <span class="indicator-card-number">
           3.7.1
-          <span class="status complete">
-            Diffusé en ligne
-          </span>
+          
+
+
+<span class="status complete">
+    <span class="status-inner">Déclaré</span>
+</span>
+
         </span>
         <a href="/fr/3-7-1">
           Pourcentage des Canadiens qui perçoivent leur santé mentale comme très bonne ou excellente
         </a>
         
 
+        
       </div>
     
     </div>
@@ -620,24 +720,25 @@ var translations = {
       
       
       
-      
-      
-      
-      
-      
 
       <div class="col-md-12  goal-indicator">
+        
         <span class="indicator-card-number">
           3.8.1
-          <span class="status complete">
-            Diffusé en ligne
-          </span>
+          
+
+
+<span class="status complete">
+    <span class="status-inner">Déclaré</span>
+</span>
+
         </span>
         <a href="/fr/3-8-1">
           Taux de vaccination pour certaines maladies
         </a>
         
 
+        
       </div>
     
     </div>
@@ -656,24 +757,25 @@ var translations = {
       
       
       
-      
-      
-      
-      
-      
 
       <div class="col-md-12  goal-indicator">
+        
         <span class="indicator-card-number">
           3.9.1
-          <span class="status complete">
-            Diffusé en ligne
-          </span>
+          
+
+
+<span class="status complete">
+    <span class="status-inner">Déclaré</span>
+</span>
+
         </span>
         <a href="/fr/3-9-1">
           Incidence de certaines maladies
         </a>
         
 
+        
       </div>
     
     </div>
@@ -692,24 +794,25 @@ var translations = {
       
       
       
-      
-      
-      
-      
-      
 
       <div class="col-md-12  goal-indicator">
+        
         <span class="indicator-card-number">
           3.10.1
-          <span class="status complete">
-            Diffusé en ligne
-          </span>
+          
+
+
+<span class="status complete">
+    <span class="status-inner">Déclaré</span>
+</span>
+
         </span>
         <a href="/fr/3-10-1">
           Taux de mortalité pour certaines causes de décès
         </a>
         
 
+        
       </div>
     
     </div>
@@ -728,24 +831,25 @@ var translations = {
       
       
       
-      
-      
-      
-      
-      
 
       <div class="col-md-12  goal-indicator">
+        
         <span class="indicator-card-number">
           3.11.1
-          <span class="status complete">
-            Diffusé en ligne
-          </span>
+          
+
+
+<span class="status complete">
+    <span class="status-inner">Déclaré</span>
+</span>
+
         </span>
         <a href="/fr/3-11-1">
           Incidence de la tuberculose par 100 000 habitants dans l’Inuit Nunangat
         </a>
         
 
+        
       </div>
     
     </div>
@@ -764,24 +868,25 @@ var translations = {
       
       
       
-      
-      
-      
-      
-      
 
       <div class="col-md-12  goal-indicator">
+        
         <span class="indicator-card-number">
           3.12.1
-          <span class="status complete">
-            Diffusé en ligne
-          </span>
+          
+
+
+<span class="status complete">
+    <span class="status-inner">Déclaré</span>
+</span>
+
         </span>
         <a href="/fr/3-12-1">
           Incidence des méfaits associés aux surdoses d’opioïdes et de stimulants
         </a>
         
 
+        
       </div>
     
     </div>
@@ -800,24 +905,25 @@ var translations = {
       
       
       
-      
-      
-      
-      
-      
 
       <div class="col-md-12  goal-indicator">
+        
         <span class="indicator-card-number">
           3.13.1
-          <span class="status complete">
-            Diffusé en ligne
-          </span>
+          
+
+
+<span class="status complete">
+    <span class="status-inner">Déclaré</span>
+</span>
+
         </span>
         <a href="/fr/3-13-1">
           Prévalence de la consommation de cigarettes
         </a>
         
 
+        
       </div>
     
     </div>
@@ -906,12 +1012,12 @@ var translations = {
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Chercher';</script>
 
-<script src='/assets/js/sdg.js?v=20210908150827'></script>
+<script src='/assets/js/sdg.js?v=20210921192003'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20210908150827"></script><script>
+    <script src="/assets/js/custom.js?v=20210921192003"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
