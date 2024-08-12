@@ -168,7 +168,7 @@
         {
           "id": "3-13-1",
           "title": "Rate of apparent opioid toxicity deaths per 100,000 population",
-          "description": "This indicator measures the rate of apparent opioid toxicity deaths per 100,000 population. <br><br> Apparent opioid toxicity death (AOTD): A death caused by intoxication/toxicity (poisoning) resulting from substance use, where one or more of the substances is an opioid, regardless of how it was obtained (e.g. illegally or through personal prescription). Other substances may also be involved.",
+          "description": "This indicator measures the rate of apparent opioid-related deaths. <br><br> Apparent opioid-related death: A death caused by intoxication/toxicity (poisoning) as a result of drug use, where one or more of the drugs is an opioid.",
           "keywords": "",
           "href": "/3-13-1/",
           "status": "complete"
@@ -447,16 +447,16 @@
         },
         {
           "id": "9-6-1",
-          "title": "Number of low carbon recharging and refueling stations under development and completed along major highways, and in rural and urban areas across Canada",
-          "description": "This indicator tracks the number of alternative fuel stations (Electric, Hydrogen and Liquified Natural Gas) in Canada. “Under development” means chargers/ stations for which an agreement is in place, but which have not yet been opened to the public. “Completed” means chargers/ stations that are built and open to the public for charging or refuelling.",
+          "title": "Number of publicly available electric vehicle charging and alternative fuelling stations in Canada",
+          "description": "This indicator tracks the number of publicly available electric vehicle charging and alternative fuelling stations in Canada.",
           "keywords": "",
           "href": "/9-6-1/",
           "status": "complete"
         },
         {
           "id": "9-7-1",
-          "title": "Number of low carbon recharging and refueling stations under development and completed in public places, on-street, at apartment buildings, retail outlets, and the workplace",
-          "description": "This indicator tracks the number of low carbon recharging and refueling stations under development and completed in public places, on-street, at apartment buildings, retail outlets, and the workplace. “Under development” means chargers/ stations for which an agreement is in place, but which have not yet been opened to the public. “Completed” means chargers/ stations that are built and open to the public for charging or refuelling",
+          "title": "Remaining useful service life ratio of infrastructure assets",
+          "description": "This indicator measures the remaining useful service life ratio of infrastructure assets. This ratio indicates the percentage of the infrastructure asset class that remains and can enable analysis of where investment is most required. The higher the ratio, the more useful life remains. <br><br> The remaining useful service life ratio of infrastructure assets is obtained as follows: the remaining useful life, which is the difference between the average age of the investment spending and their expected service life, is divided by the expected service life. For example, if the average age of investment in highways is 6 years and the expected service life is 30 years, the ratio is (30 − 6) ÷ 30 = 80%.",
           "keywords": "",
           "href": "/9-7-1/",
           "status": "complete"
@@ -678,6 +678,14 @@
           "status": "complete"
         },
         {
+          "id": "15-5-1",
+          "title": "Proportion of the sustainable wood supply harvested",
+          "description": "This indicator measures the total amount of timber harvested annually as a percentage of the sustainable wood supply. To ensure that forests can continue to provide timber, harvests must remain within sustainable limits. The sustainable wood supply is defined as the potential volume of timber which can be harvested sustainably as determined by a complex analysis of ecological, economic, and social considerations. <em>Environment and Climate Change Canada (ECCC)</em>",
+          "keywords": "",
+          "href": "/15-5-1/",
+          "status": "complete"
+        },
+        {
           "id": "15-6-1",
           "title": "Forest area as a proportion of total land area",
           "description": "This indicator measures the proportion of forested areas as a proportion of total land area. Forest area is a basic sustainability indicator and is important to monitor closely, particularly in regions where forest area is being lost. <em>(NRCan)</em>",
@@ -759,8 +767,8 @@
         
         {
           "id": "17-1-1",
-          "title": "Number of open datasets published by the Government of Canada",
-          "description": "This indicator measures the number of open datasets published by the Government of Canada.",
+          "title": "Statistical Performance Indicators",
+          "description": "<p> The Statistical Performance Indicators (SPI) assess the maturity and performance of national statistical systems in five key areas, called pillars. The five pillars are:<br><br> 1. Data Use: Statistics have value only if they are used. A successful statistical system produces data that are used widely and frequently.<br> 2. Data Services: A range of services connects data users to producers and facilitate dialogues between them, thus building trust and a sense of value.<br> 3. Data Products: The dialogues between users and producers drive the design and range of statistical products and their accuracy, timeliness, frequency, comparability, and levels of disaggregation. The products signal whether countries are able to produce indicators related to the 17 Sustainable Development Goals.<br> 4. Data Sources: To create useful products, the statistical system needs to draw on sources inside and outside the government. Data collection thus goes beyond the typical censuses and surveys to include administrative and geospatial data as well as data generated by private firms and citizens.<br> 5. Data Infrastructure: A mature statistical system has well-developed hard infrastructure (legislation, governance, standards) and soft infrastructure (skills, partnerships) as well as the financial resources to deliver useful—and widely used—data products and services.<br><br> Each of these pillars is supported by four or five dimensions and uses defined methods and indicators. <em>(World Bank Group)</em><br><br> The series labelled as 'Canada' represents the overall SPI score for Canada. </p>",
           "keywords": "",
           "href": "/17-1-1/",
           "status": "complete"
