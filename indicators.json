@@ -48,7 +48,7 @@
         {
           "id": "2-1-1",
           "title": "Prevalence of food insecurity",
-          "description": "This indicator measures the prevalence of food insecurity.",
+          "description": "This indicator measures the prevalence of moderate and severe food insecurity.",
           "keywords": "women, gender",
           "href": "/2-1-1/",
           "status": "complete"
@@ -519,7 +519,7 @@
         },
         {
           "id": "11-4-1",
-          "title": "Percentage of the population living within 500 meters of a public transport stop",
+          "title": "Percentage of the population living within 500 metres of a public transport stop",
           "description": "This indicator measures the proportion of the population within the geographic unit living within 500 meters of a public transit stop.",
           "keywords": "",
           "href": "/11-4-1/",
@@ -584,7 +584,7 @@
         {
           "id": "12-4-1",
           "title": "Proportion of discarded plastic leaked permanently into the environment",
-          "description": "This indicator measures expenditure on flood protection infrastructure. Of total discarded plastic, a small fraction is leaked permanently to the environment - based on data from consulting reports - while the majority is collected by waste and recycling management systems.",
+          "description": "This indicator measures the proportion of discarded plastic leaked permanently into the environment. Of total discarded plastic, a small fraction is leaked permanently to the environment - based on data from consulting reports - while the majority is collected by waste and recycling management systems.",
           "keywords": "",
           "href": "/12-4-1/",
           "status": "complete"
