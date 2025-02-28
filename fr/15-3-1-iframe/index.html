@@ -2,7 +2,7 @@
 <html lang="fr" class="no-js">
     <head>
         <meta charset="utf-8">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" integrity="sha384-bPV3mA2eo3edoq56VzcPBmG1N1QVUfjYMxVIJPPzyFJyFZ8GFfN7Npt06Zr23qts" crossorigin="anonymous"></script>
         <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0&features=Promise%2CString.prototype.includes%2CCustomEvent%2CArray.prototype.includes%2CArray.prototype.find%2CObject.assign%2CObject.values%2CObject.entries%2CArray.from%2CSet%2CArray.prototype.findIndex%2Cfetch"></script>
 <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.15.0/js/canvas-to-blob.min.js"></script>
         <script>
@@ -39,7 +39,7 @@ var opensdg = {
   },
 
   // Disaggregations which should be ignored on indicator pages.
-  ignoredDisaggregations: null,
+  ignoredDisaggregations: ["Progress"],
 
   language: 'fr',
 
@@ -142,7 +142,7 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20250224211248">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20250228210216">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -218,6 +218,8 @@ layout-indicator-iframe
 
 <script type="text/template" id="units_template">
   
+  <% if(units.length > 1) { %>
+  
     <h4>Unité de mesure</h4>
     <fieldset>
       <legend class="sr-only">Unité de mesure</legend>
@@ -227,9 +229,13 @@ layout-indicator-iframe
       <% }); %>
     </fieldset>
   
+  <% } %>
+  
 </script>
 
 <script type="text/template" id="series_template">
+  
+  <% if(serieses.length > 1) { %>
   
     <h4>Séries</h4>
     <fieldset>
@@ -240,6 +246,8 @@ layout-indicator-iframe
         <label><input type="radio" name="series" value="<%=seriesItem%>" tabindex=0 <%=checked ? 'checked' : ''%> /> <%=translations.t(seriesItem)%> <%=isProxy ? proxyPill : ''%></label>
       <% }); %>
     </fieldset>
+  
+  <% } %>
   
 </script>
 
@@ -293,9 +301,13 @@ layout-indicator-iframe
         <div class="progress-status">
         
             <div class="progress-status-label">
-                Pas disponible
+                Détérioration
             </div>
         
+        
+            <div class="progress-status-image">
+                <img src="/assets/img/progress/red-gauge.png" alt="Détérioration" />
+            </div>
         
         </div>
     
@@ -340,7 +352,7 @@ layout-indicator-iframe
   data-graphtargetlines="null"
   data-graphseriesbreaks="null"
   data-indicatordownloads="null"
-  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Année&quot;},{&quot;name&quot;:&quot;Series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Par groupe d'espèces&quot;,&quot;Par système&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Series&quot;},{&quot;name&quot;:&quot;Species group&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Indice des oiseaux&quot;,&quot;Indice des mammifères&quot;,&quot;Indice des poissons&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Groupe d'espèces&quot;},{&quot;name&quot;:&quot;System&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Indice terrestre&quot;,&quot;Indice d'eau douce&quot;,&quot;Indice marin&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Système&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Valeur&quot;}]}"
+  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Année&quot;},{&quot;name&quot;:&quot;Series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Par groupe d'espèces&quot;,&quot;Par système&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Series&quot;},{&quot;name&quot;:&quot;Species group&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Indice des oiseaux&quot;,&quot;Indice des mammifères&quot;,&quot;Indice des poissons&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Groupe d'espèces&quot;},{&quot;name&quot;:&quot;System&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Indice terrestre&quot;,&quot;Indice d'eau douce&quot;,&quot;Indice marin&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Système&quot;},{&quot;name&quot;:&quot;Progress&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Progress&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Valeur&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="null"
   data-proxy=""
@@ -396,7 +408,11 @@ layout-indicator-iframe
         
         
         
-        <th scope="col" class="table-value">Series</th>
+        <th scope="col">Series</th>
+        
+        
+        
+        <th scope="col" class="table-value">Progress</th>
         
         
       </thead>
@@ -413,7 +429,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0</td>
           
           
         </tr>
@@ -429,7 +449,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0145</td>
           
           
         </tr>
@@ -445,7 +469,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0266</td>
           
           
         </tr>
@@ -461,7 +489,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0352</td>
           
           
         </tr>
@@ -477,7 +509,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0398</td>
           
           
         </tr>
@@ -493,7 +529,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0453</td>
           
           
         </tr>
@@ -509,7 +549,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0485</td>
           
           
         </tr>
@@ -525,7 +569,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0503</td>
           
           
         </tr>
@@ -541,7 +589,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0559</td>
           
           
         </tr>
@@ -557,7 +609,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0634</td>
           
           
         </tr>
@@ -573,7 +629,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0725</td>
           
           
         </tr>
@@ -589,7 +649,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0803</td>
           
           
         </tr>
@@ -605,7 +669,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0801</td>
           
           
         </tr>
@@ -621,7 +689,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0811</td>
           
           
         </tr>
@@ -637,7 +709,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0897</td>
           
           
         </tr>
@@ -653,7 +729,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.097</td>
           
           
         </tr>
@@ -669,7 +749,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.1002</td>
           
           
         </tr>
@@ -685,7 +769,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0885</td>
           
           
         </tr>
@@ -701,7 +789,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0806</td>
           
           
         </tr>
@@ -717,7 +809,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0723</td>
           
           
         </tr>
@@ -733,7 +829,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0696</td>
           
           
         </tr>
@@ -749,7 +849,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0658</td>
           
           
         </tr>
@@ -765,7 +869,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.063</td>
           
           
         </tr>
@@ -781,7 +889,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.065</td>
           
           
         </tr>
@@ -797,7 +909,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0707</td>
           
           
         </tr>
@@ -813,7 +929,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0715</td>
           
           
         </tr>
@@ -829,7 +949,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0695</td>
           
           
         </tr>
@@ -845,7 +969,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0652</td>
           
           
         </tr>
@@ -861,7 +989,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0527</td>
           
           
         </tr>
@@ -877,7 +1009,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0417</td>
           
           
         </tr>
@@ -893,7 +1029,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0331</td>
           
           
         </tr>
@@ -909,7 +1049,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0277</td>
           
           
         </tr>
@@ -925,7 +1069,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0207</td>
           
           
         </tr>
@@ -941,7 +1089,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0159</td>
           
           
         </tr>
@@ -957,7 +1109,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0107</td>
           
           
         </tr>
@@ -973,7 +1129,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0117</td>
           
           
         </tr>
@@ -989,7 +1149,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0132</td>
           
           
         </tr>
@@ -1005,7 +1169,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0117</td>
           
           
         </tr>
@@ -1021,7 +1189,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">1.0043</td>
           
           
         </tr>
@@ -1037,7 +1209,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">0.9986</td>
           
           
         </tr>
@@ -1053,7 +1229,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">0.9924</td>
           
           
         </tr>
@@ -1069,7 +1249,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">0.9872</td>
           
           
         </tr>
@@ -1085,7 +1269,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">0.9741</td>
           
           
         </tr>
@@ -1101,7 +1289,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">0.9568</td>
           
           
         </tr>
@@ -1117,7 +1309,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">0.9414</td>
           
           
         </tr>
@@ -1133,7 +1329,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">0.9339</td>
           
           
         </tr>
@@ -1149,7 +1349,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">0.9356</td>
           
           
         </tr>
@@ -1165,7 +1369,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">0.9252</td>
           
           
         </tr>
@@ -1181,7 +1389,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par groupe d'espèces</td>
+          <td>Par groupe d'espèces</td>
+          
+          
+          
+          <td class="table-value">0.9257</td>
           
           
         </tr>
@@ -1197,7 +1409,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0</td>
           
           
         </tr>
@@ -1213,7 +1429,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0145</td>
           
           
         </tr>
@@ -1229,7 +1449,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0266</td>
           
           
         </tr>
@@ -1245,7 +1469,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0352</td>
           
           
         </tr>
@@ -1261,7 +1489,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0398</td>
           
           
         </tr>
@@ -1277,7 +1509,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0453</td>
           
           
         </tr>
@@ -1293,7 +1529,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0485</td>
           
           
         </tr>
@@ -1309,7 +1549,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0503</td>
           
           
         </tr>
@@ -1325,7 +1569,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0559</td>
           
           
         </tr>
@@ -1341,7 +1589,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0634</td>
           
           
         </tr>
@@ -1357,7 +1609,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0725</td>
           
           
         </tr>
@@ -1373,7 +1629,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0803</td>
           
           
         </tr>
@@ -1389,7 +1649,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0801</td>
           
           
         </tr>
@@ -1405,7 +1669,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0811</td>
           
           
         </tr>
@@ -1421,7 +1689,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0897</td>
           
           
         </tr>
@@ -1437,7 +1709,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.097</td>
           
           
         </tr>
@@ -1453,7 +1729,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.1002</td>
           
           
         </tr>
@@ -1469,7 +1749,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0885</td>
           
           
         </tr>
@@ -1485,7 +1769,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0806</td>
           
           
         </tr>
@@ -1501,7 +1789,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0723</td>
           
           
         </tr>
@@ -1517,7 +1809,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0696</td>
           
           
         </tr>
@@ -1533,7 +1829,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0658</td>
           
           
         </tr>
@@ -1549,7 +1849,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.063</td>
           
           
         </tr>
@@ -1565,7 +1869,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.065</td>
           
           
         </tr>
@@ -1581,7 +1889,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0707</td>
           
           
         </tr>
@@ -1597,7 +1909,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0715</td>
           
           
         </tr>
@@ -1613,7 +1929,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0695</td>
           
           
         </tr>
@@ -1629,7 +1949,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0652</td>
           
           
         </tr>
@@ -1645,7 +1969,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0527</td>
           
           
         </tr>
@@ -1661,7 +1989,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0417</td>
           
           
         </tr>
@@ -1677,7 +2009,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0331</td>
           
           
         </tr>
@@ -1693,7 +2029,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0277</td>
           
           
         </tr>
@@ -1709,7 +2049,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0207</td>
           
           
         </tr>
@@ -1725,7 +2069,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0159</td>
           
           
         </tr>
@@ -1741,7 +2089,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0107</td>
           
           
         </tr>
@@ -1757,7 +2109,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0117</td>
           
           
         </tr>
@@ -1773,7 +2129,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0132</td>
           
           
         </tr>
@@ -1789,7 +2149,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0117</td>
           
           
         </tr>
@@ -1805,7 +2169,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">1.0043</td>
           
           
         </tr>
@@ -1821,7 +2189,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">0.9986</td>
           
           
         </tr>
@@ -1837,7 +2209,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">0.9924</td>
           
           
         </tr>
@@ -1853,7 +2229,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">0.9872</td>
           
           
         </tr>
@@ -1869,7 +2249,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">0.9741</td>
           
           
         </tr>
@@ -1885,7 +2269,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">0.9568</td>
           
           
         </tr>
@@ -1901,7 +2289,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">0.9414</td>
           
           
         </tr>
@@ -1917,7 +2309,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">0.9339</td>
           
           
         </tr>
@@ -1933,7 +2329,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">0.9356</td>
           
           
         </tr>
@@ -1949,7 +2349,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">0.9252</td>
           
           
         </tr>
@@ -1965,7 +2369,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Par système</td>
+          <td>Par système</td>
+          
+          
+          
+          <td class="table-value">0.9257</td>
           
           
         </tr>
@@ -2795,16 +3203,16 @@ data-event-label="Change to indicator.sources tab"
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js" integrity="sha384-ficRBwtap/VLzILv81vIvgp30PoJYnlCm96tPpNYHXAf+h9SIThOZxxIzRUzbpAh" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js" integrity="sha384-jIAE3P7Re8BgMkT0XOtfQ6lzZgbDw/02WeRMJvXK3WMHBNynEx5xofqia1OHuGh0" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" integrity="sha256-Y26AMvaIfrZ1EQU49pf6H4QzVTrOI8m9wQYKkftBt4s=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js" integrity="sha384-kdgUFNEbslNOEAQ/zFH9wjDORAbvN0KUYOpfJIJYPdjtzLXkZsMJAXU9HPpi5B5c" crossorigin="anonymous"></script>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha384-eEX5kO4tdQpY+eTjDbZNPlMm4QhsK+kosSZtkzp+uZk0L5g0lSzmWXWHzKDoOzA7" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js" integrity="sha384-3qyhlVVDXXiWhzgKIoL/aw+uaXN5kyAFE0Jv2LGoV+nnQnum4ebt1QAtRbjnz9pL" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js" integrity="sha384-KQ8aykg/lc6595wSrMplFVs4kRS66x+EdkX7EQsJ2Pe6FX7l3tMqyD1Am0c2dKBG" crossorigin="anonymous"></script>
 
 
 
@@ -2835,12 +3243,12 @@ ga('send', 'pageview');
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Chercher';</script>
 
-<script src='/assets/js/sdg.js?v=20250224211248'></script>
+<script src='/assets/js/sdg.js?v=20250228210216'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20250224211248"></script><script>
+    <script src="/assets/js/custom.js?v=20250228210216"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
