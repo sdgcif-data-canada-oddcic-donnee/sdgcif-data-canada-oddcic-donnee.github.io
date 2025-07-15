@@ -137,7 +137,7 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20250710172847">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20250715203647">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -291,10 +291,15 @@ data-event-label="high"
 
   <h1>
   
-    Statut de rapport
+    État des rapports
   
 </h1>
 
+
+<div class="reporting-status-description">
+  <p>status.status_description</p>
+
+</div>
 
 
 
@@ -310,19 +315,23 @@ data-event-label="high"
     
     <div class="details">
         <h2 class="status-goal">
-            Statut général de rapport
+            État général des rapports
         </h2>
         <span class="total"><span>86</span> indicateurs</span>
         
         <div class="summary">
             <div class="statuses">
             
+            
             <div>
-                <span class="status complete"><span class="status-inner">86</span></span><strong>Diffusé en ligne</strong><span class="value">100%</span>
+                <span class="status complete"><span class="status-inner">85</span></span><strong>Diffusé en ligne</strong><span class="value">99%</span>
             </div>
             
             
             
+            <div>
+                <span class="status notavailable"><span class="status-inner">1</span></span><strong>Non disponible</strong><span class="value">1%</span>
+            </div>
             <br style="clear:both;">
             </div>
         </div>
@@ -331,16 +340,21 @@ data-event-label="high"
             
             
             
-            <span class="complete" style="width:100.0%" title="Diffusé en ligne: 100%"></span>
+            
+            <span class="complete" style="width:98.83720930232558%" title="Diffusé en ligne: 99%"></span>
             
             
             
+            
+            
+            
+            <span class="notavailable" style="width:1.1627906976744187%" title="Non disponible: 1%"></span>
             </div>
         
     </div>
     <br style="clear:both;">
 </div>
-  <h2>Statut par but</h2><div class="goal reporting-status-item">
+  <h2>Statut par objectif</h2><div class="goal reporting-status-item">
     <div class="frame goal-tiles">
         <a href="/fr/1/" title="Voir les cibles et les indicateurs de l'objectif 1" aria-label="Voir les cibles et les indicateurs de l'objectif 1">
         <img src="https://sdg-data-canada-odd-donnees.github.io/cif-cic_dev/assets/img/cards/inverted/fr/1.png" alt="Pas de pauvreté - Objectif 1" width="100" height="100" class="goal-icon-1 goal-icon-image goal-icon-image-"/>
@@ -355,12 +369,16 @@ data-event-label="high"
         <div class="summary">
             <div class="statuses">
                 
+                
                 <div>
                     <span class="status complete"><span class="status-inner">4</span></span><strong>Diffusé en ligne</strong><span class="value">100%</span>
                 </div>
                 
                 
                 
+                <div>
+                    <span class="status notavailable"><span class="status-inner">0</span></span><strong>Non disponible</strong><span class="value">0%</span>
+                </div>
                 <br style="clear:both;">
             </div>
         </div>
@@ -369,10 +387,15 @@ data-event-label="high"
                 
                 
                 
+                
                 <span class="complete" style="width:100.0%" title="Diffusé en ligne: 100%"></span>
                 
                 
                 
+                
+                
+                
+                <span class="notavailable" style="width:0.0%" title="Non disponible: 0%"></span>
                 </div>
         
         <div class="divider"></div>
@@ -393,12 +416,16 @@ data-event-label="high"
         <div class="summary">
             <div class="statuses">
                 
+                
                 <div>
                     <span class="status complete"><span class="status-inner">2</span></span><strong>Diffusé en ligne</strong><span class="value">100%</span>
                 </div>
                 
                 
                 
+                <div>
+                    <span class="status notavailable"><span class="status-inner">0</span></span><strong>Non disponible</strong><span class="value">0%</span>
+                </div>
                 <br style="clear:both;">
             </div>
         </div>
@@ -407,10 +434,15 @@ data-event-label="high"
                 
                 
                 
+                
                 <span class="complete" style="width:100.0%" title="Diffusé en ligne: 100%"></span>
                 
                 
                 
+                
+                
+                
+                <span class="notavailable" style="width:0.0%" title="Non disponible: 0%"></span>
                 </div>
         
         <div class="divider"></div>
@@ -431,12 +463,16 @@ data-event-label="high"
         <div class="summary">
             <div class="statuses">
                 
+                
                 <div>
                     <span class="status complete"><span class="status-inner">15</span></span><strong>Diffusé en ligne</strong><span class="value">100%</span>
                 </div>
                 
                 
                 
+                <div>
+                    <span class="status notavailable"><span class="status-inner">0</span></span><strong>Non disponible</strong><span class="value">0%</span>
+                </div>
                 <br style="clear:both;">
             </div>
         </div>
@@ -445,10 +481,15 @@ data-event-label="high"
                 
                 
                 
+                
                 <span class="complete" style="width:100.0%" title="Diffusé en ligne: 100%"></span>
                 
                 
                 
+                
+                
+                
+                <span class="notavailable" style="width:0.0%" title="Non disponible: 0%"></span>
                 </div>
         
         <div class="divider"></div>
@@ -469,12 +510,16 @@ data-event-label="high"
         <div class="summary">
             <div class="statuses">
                 
+                
                 <div>
                     <span class="status complete"><span class="status-inner">3</span></span><strong>Diffusé en ligne</strong><span class="value">100%</span>
                 </div>
                 
                 
                 
+                <div>
+                    <span class="status notavailable"><span class="status-inner">0</span></span><strong>Non disponible</strong><span class="value">0%</span>
+                </div>
                 <br style="clear:both;">
             </div>
         </div>
@@ -483,10 +528,15 @@ data-event-label="high"
                 
                 
                 
+                
                 <span class="complete" style="width:100.0%" title="Diffusé en ligne: 100%"></span>
                 
                 
                 
+                
+                
+                
+                <span class="notavailable" style="width:0.0%" title="Non disponible: 0%"></span>
                 </div>
         
         <div class="divider"></div>
@@ -507,12 +557,16 @@ data-event-label="high"
         <div class="summary">
             <div class="statuses">
                 
+                
                 <div>
                     <span class="status complete"><span class="status-inner">5</span></span><strong>Diffusé en ligne</strong><span class="value">100%</span>
                 </div>
                 
                 
                 
+                <div>
+                    <span class="status notavailable"><span class="status-inner">0</span></span><strong>Non disponible</strong><span class="value">0%</span>
+                </div>
                 <br style="clear:both;">
             </div>
         </div>
@@ -521,10 +575,15 @@ data-event-label="high"
                 
                 
                 
+                
                 <span class="complete" style="width:100.0%" title="Diffusé en ligne: 100%"></span>
                 
                 
                 
+                
+                
+                
+                <span class="notavailable" style="width:0.0%" title="Non disponible: 0%"></span>
                 </div>
         
         <div class="divider"></div>
@@ -545,12 +604,16 @@ data-event-label="high"
         <div class="summary">
             <div class="statuses">
                 
+                
                 <div>
                     <span class="status complete"><span class="status-inner">6</span></span><strong>Diffusé en ligne</strong><span class="value">100%</span>
                 </div>
                 
                 
                 
+                <div>
+                    <span class="status notavailable"><span class="status-inner">0</span></span><strong>Non disponible</strong><span class="value">0%</span>
+                </div>
                 <br style="clear:both;">
             </div>
         </div>
@@ -559,10 +622,15 @@ data-event-label="high"
                 
                 
                 
+                
                 <span class="complete" style="width:100.0%" title="Diffusé en ligne: 100%"></span>
                 
                 
                 
+                
+                
+                
+                <span class="notavailable" style="width:0.0%" title="Non disponible: 0%"></span>
                 </div>
         
         <div class="divider"></div>
@@ -583,12 +651,16 @@ data-event-label="high"
         <div class="summary">
             <div class="statuses">
                 
+                
                 <div>
                     <span class="status complete"><span class="status-inner">3</span></span><strong>Diffusé en ligne</strong><span class="value">100%</span>
                 </div>
                 
                 
                 
+                <div>
+                    <span class="status notavailable"><span class="status-inner">0</span></span><strong>Non disponible</strong><span class="value">0%</span>
+                </div>
                 <br style="clear:both;">
             </div>
         </div>
@@ -597,10 +669,15 @@ data-event-label="high"
                 
                 
                 
+                
                 <span class="complete" style="width:100.0%" title="Diffusé en ligne: 100%"></span>
                 
                 
                 
+                
+                
+                
+                <span class="notavailable" style="width:0.0%" title="Non disponible: 0%"></span>
                 </div>
         
         <div class="divider"></div>
@@ -621,12 +698,16 @@ data-event-label="high"
         <div class="summary">
             <div class="statuses">
                 
+                
                 <div>
                     <span class="status complete"><span class="status-inner">6</span></span><strong>Diffusé en ligne</strong><span class="value">100%</span>
                 </div>
                 
                 
                 
+                <div>
+                    <span class="status notavailable"><span class="status-inner">0</span></span><strong>Non disponible</strong><span class="value">0%</span>
+                </div>
                 <br style="clear:both;">
             </div>
         </div>
@@ -635,10 +716,15 @@ data-event-label="high"
                 
                 
                 
+                
                 <span class="complete" style="width:100.0%" title="Diffusé en ligne: 100%"></span>
                 
                 
                 
+                
+                
+                
+                <span class="notavailable" style="width:0.0%" title="Non disponible: 0%"></span>
                 </div>
         
         <div class="divider"></div>
@@ -659,12 +745,16 @@ data-event-label="high"
         <div class="summary">
             <div class="statuses">
                 
+                
                 <div>
                     <span class="status complete"><span class="status-inner">7</span></span><strong>Diffusé en ligne</strong><span class="value">100%</span>
                 </div>
                 
                 
                 
+                <div>
+                    <span class="status notavailable"><span class="status-inner">0</span></span><strong>Non disponible</strong><span class="value">0%</span>
+                </div>
                 <br style="clear:both;">
             </div>
         </div>
@@ -673,10 +763,15 @@ data-event-label="high"
                 
                 
                 
+                
                 <span class="complete" style="width:100.0%" title="Diffusé en ligne: 100%"></span>
                 
                 
                 
+                
+                
+                
+                <span class="notavailable" style="width:0.0%" title="Non disponible: 0%"></span>
                 </div>
         
         <div class="divider"></div>
@@ -697,12 +792,16 @@ data-event-label="high"
         <div class="summary">
             <div class="statuses">
                 
+                
                 <div>
                     <span class="status complete"><span class="status-inner">2</span></span><strong>Diffusé en ligne</strong><span class="value">100%</span>
                 </div>
                 
                 
                 
+                <div>
+                    <span class="status notavailable"><span class="status-inner">0</span></span><strong>Non disponible</strong><span class="value">0%</span>
+                </div>
                 <br style="clear:both;">
             </div>
         </div>
@@ -711,10 +810,15 @@ data-event-label="high"
                 
                 
                 
+                
                 <span class="complete" style="width:100.0%" title="Diffusé en ligne: 100%"></span>
                 
                 
                 
+                
+                
+                
+                <span class="notavailable" style="width:0.0%" title="Non disponible: 0%"></span>
                 </div>
         
         <div class="divider"></div>
@@ -735,12 +839,16 @@ data-event-label="high"
         <div class="summary">
             <div class="statuses">
                 
+                
                 <div>
-                    <span class="status complete"><span class="status-inner">7</span></span><strong>Diffusé en ligne</strong><span class="value">100%</span>
+                    <span class="status complete"><span class="status-inner">6</span></span><strong>Diffusé en ligne</strong><span class="value">86%</span>
                 </div>
                 
                 
                 
+                <div>
+                    <span class="status notavailable"><span class="status-inner">1</span></span><strong>Non disponible</strong><span class="value">14%</span>
+                </div>
                 <br style="clear:both;">
             </div>
         </div>
@@ -749,10 +857,15 @@ data-event-label="high"
                 
                 
                 
-                <span class="complete" style="width:100.0%" title="Diffusé en ligne: 100%"></span>
+                
+                <span class="complete" style="width:85.71428571428571%" title="Diffusé en ligne: 86%"></span>
                 
                 
                 
+                
+                
+                
+                <span class="notavailable" style="width:14.285714285714285%" title="Non disponible: 14%"></span>
                 </div>
         
         <div class="divider"></div>
@@ -773,12 +886,16 @@ data-event-label="high"
         <div class="summary">
             <div class="statuses">
                 
+                
                 <div>
                     <span class="status complete"><span class="status-inner">4</span></span><strong>Diffusé en ligne</strong><span class="value">100%</span>
                 </div>
                 
                 
                 
+                <div>
+                    <span class="status notavailable"><span class="status-inner">0</span></span><strong>Non disponible</strong><span class="value">0%</span>
+                </div>
                 <br style="clear:both;">
             </div>
         </div>
@@ -787,10 +904,15 @@ data-event-label="high"
                 
                 
                 
+                
                 <span class="complete" style="width:100.0%" title="Diffusé en ligne: 100%"></span>
                 
                 
                 
+                
+                
+                
+                <span class="notavailable" style="width:0.0%" title="Non disponible: 0%"></span>
                 </div>
         
         <div class="divider"></div>
@@ -811,12 +933,16 @@ data-event-label="high"
         <div class="summary">
             <div class="statuses">
                 
+                
                 <div>
                     <span class="status complete"><span class="status-inner">4</span></span><strong>Diffusé en ligne</strong><span class="value">100%</span>
                 </div>
                 
                 
                 
+                <div>
+                    <span class="status notavailable"><span class="status-inner">0</span></span><strong>Non disponible</strong><span class="value">0%</span>
+                </div>
                 <br style="clear:both;">
             </div>
         </div>
@@ -825,10 +951,15 @@ data-event-label="high"
                 
                 
                 
+                
                 <span class="complete" style="width:100.0%" title="Diffusé en ligne: 100%"></span>
                 
                 
                 
+                
+                
+                
+                <span class="notavailable" style="width:0.0%" title="Non disponible: 0%"></span>
                 </div>
         
         <div class="divider"></div>
@@ -849,12 +980,16 @@ data-event-label="high"
         <div class="summary">
             <div class="statuses">
                 
+                
                 <div>
                     <span class="status complete"><span class="status-inner">2</span></span><strong>Diffusé en ligne</strong><span class="value">100%</span>
                 </div>
                 
                 
                 
+                <div>
+                    <span class="status notavailable"><span class="status-inner">0</span></span><strong>Non disponible</strong><span class="value">0%</span>
+                </div>
                 <br style="clear:both;">
             </div>
         </div>
@@ -863,10 +998,15 @@ data-event-label="high"
                 
                 
                 
+                
                 <span class="complete" style="width:100.0%" title="Diffusé en ligne: 100%"></span>
                 
                 
                 
+                
+                
+                
+                <span class="notavailable" style="width:0.0%" title="Non disponible: 0%"></span>
                 </div>
         
         <div class="divider"></div>
@@ -887,12 +1027,16 @@ data-event-label="high"
         <div class="summary">
             <div class="statuses">
                 
+                
                 <div>
                     <span class="status complete"><span class="status-inner">6</span></span><strong>Diffusé en ligne</strong><span class="value">100%</span>
                 </div>
                 
                 
                 
+                <div>
+                    <span class="status notavailable"><span class="status-inner">0</span></span><strong>Non disponible</strong><span class="value">0%</span>
+                </div>
                 <br style="clear:both;">
             </div>
         </div>
@@ -901,10 +1045,15 @@ data-event-label="high"
                 
                 
                 
+                
                 <span class="complete" style="width:100.0%" title="Diffusé en ligne: 100%"></span>
                 
                 
                 
+                
+                
+                
+                <span class="notavailable" style="width:0.0%" title="Non disponible: 0%"></span>
                 </div>
         
         <div class="divider"></div>
@@ -925,12 +1074,16 @@ data-event-label="high"
         <div class="summary">
             <div class="statuses">
                 
+                
                 <div>
                     <span class="status complete"><span class="status-inner">7</span></span><strong>Diffusé en ligne</strong><span class="value">100%</span>
                 </div>
                 
                 
                 
+                <div>
+                    <span class="status notavailable"><span class="status-inner">0</span></span><strong>Non disponible</strong><span class="value">0%</span>
+                </div>
                 <br style="clear:both;">
             </div>
         </div>
@@ -939,10 +1092,15 @@ data-event-label="high"
                 
                 
                 
+                
                 <span class="complete" style="width:100.0%" title="Diffusé en ligne: 100%"></span>
                 
                 
                 
+                
+                
+                
+                <span class="notavailable" style="width:0.0%" title="Non disponible: 0%"></span>
                 </div>
         
         <div class="divider"></div>
@@ -963,12 +1121,16 @@ data-event-label="high"
         <div class="summary">
             <div class="statuses">
                 
+                
                 <div>
                     <span class="status complete"><span class="status-inner">3</span></span><strong>Diffusé en ligne</strong><span class="value">100%</span>
                 </div>
                 
                 
                 
+                <div>
+                    <span class="status notavailable"><span class="status-inner">0</span></span><strong>Non disponible</strong><span class="value">0%</span>
+                </div>
                 <br style="clear:both;">
             </div>
         </div>
@@ -977,10 +1139,15 @@ data-event-label="high"
                 
                 
                 
+                
                 <span class="complete" style="width:100.0%" title="Diffusé en ligne: 100%"></span>
                 
                 
                 
+                
+                
+                
+                <span class="notavailable" style="width:0.0%" title="Non disponible: 0%"></span>
                 </div>
         
         <div class="divider"></div>
@@ -1102,12 +1269,12 @@ ga('send', 'pageview');
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Chercher';</script>
 
-<script src='/assets/js/sdg.js?v=20250710172847'></script>
+<script src='/assets/js/sdg.js?v=20250715203647'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20250710172847"></script><script>
+    <script src="/assets/js/custom.js?v=20250715203647"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
